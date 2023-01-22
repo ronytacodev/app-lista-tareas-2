@@ -4,8 +4,13 @@ const TodoInput = ({ addTodo }) => {
 
     const [title, setTitle] = useState('')
 
-    console.log(title)
-    // me quede en el min 55.29
+    const handleTodo = (e) => {
+        if (e.key.toLowerCase() === 'enter') {
+            addTodo(title)
+            setTitle('')
+        }
+    }
+
     return (
         <div className="mt-6 relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -17,6 +22,7 @@ const TodoInput = ({ addTodo }) => {
                 placeholder="what's next..."
                 value={title}
                 onChange={e => setTitle(e.target.value)}
+                onKeyDown={e => handleTodo(e)}
             />
         </div>
     )
