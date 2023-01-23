@@ -1,8 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { Title } from "./components/Title";
-import { TodoInput } from "./components/TodoInput";
-import { TodoList } from "./components/TodoList";
+import { Title, TodoInput, TodoList } from './components';
 
 function App() {
 
@@ -82,13 +80,13 @@ function App() {
 
   useEffect(() => {
     if (activeFilter === 'all') {
-      setFilteredTodos(todos)
+      setFilteredTodos(todos);
     } else if (activeFilter === 'active') {
       const activeTodos = todos.filter(todo => todo.completed === false)
-      setFilteredTodos(activeTodos)
+      setFilteredTodos(activeTodos);
     } else if (activeFilter === 'completed') {
       const completedTodos = todos.filter(todo => todo.completed === true)
-      setFilteredTodos(completedTodos)
+      setFilteredTodos(completedTodos);
     }
   }, [activeFilter, todos])
 
