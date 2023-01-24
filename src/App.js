@@ -28,8 +28,8 @@ function App() {
 
   ])
 
-  const [activeFilter, setActiveFilter] = useState('all')
-  const [filteredTodos, setFilteredTodos] = useState(todos)
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [filteredTodos, setFilteredTodos] = useState(todos);
 
   const addTodo = (title) => {
     const lastId = todos.length > 0 ? todos[todos.length - 1].id : 1;
@@ -50,7 +50,7 @@ function App() {
       if (todo.id === id) {
         return {...todo, completed: !todo.completed}
       }
-      return todo
+      return todo;
     })
 
     setTodos(updateList);
@@ -63,7 +63,7 @@ function App() {
 
   const handleClearComplete = () => {
     const updateList = todos.filter(todo => !todo.completed);
-    setActiveFilter(updateList);
+    setTodos(updateList);
   }
 
   const showAllTodos = () => {
@@ -82,27 +82,27 @@ function App() {
     if (activeFilter === 'all') {
       setFilteredTodos(todos);
     } else if (activeFilter === 'active') {
-      const activeTodos = todos.filter(todo => todo.completed === false)
+      const activeTodos = todos.filter(todo => todo.completed === false);
       setFilteredTodos(activeTodos);
     } else if (activeFilter === 'completed') {
-      const completedTodos = todos.filter(todo => todo.completed === true)
+      const completedTodos = todos.filter(todo => todo.completed === true);
       setFilteredTodos(completedTodos);
     }
-  }, [activeFilter, todos])
+  }, [activeFilter, todos]);
 
   return (
-    <div className="bg-gray-900 min-h-screen h-full font-inter text-gray-100 flex items-center justify-center py-20 px-5">
+    <div className="bg-violet-800 min-h-screen h-full font-inter text-gray-100 flex items-center justify-center py-20 px-5">
         <div className="container flex flex-col max-w-xl">
           <Title/>
           <TodoInput addTodo={addTodo}/>
           <TodoList
             todos={filteredTodos}
-            activeFilter={activeFilter}
-            handleSetComplete={handleSetComplete}
-            handleDelete ={handleDelete}
+            activeFilter={activeFilter}       
             showAllTodos={showAllTodos}
             showActiveTodos={showActiveTodos}
             showCompletedTodos={showCompletedTodos}
+            handleSetComplete={handleSetComplete}
+            handleDelete ={handleDelete}            
             handleClearComplete={handleClearComplete}
            />
         </div>

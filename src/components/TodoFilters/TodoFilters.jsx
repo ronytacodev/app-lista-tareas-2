@@ -1,4 +1,4 @@
-import { FilterButton, FilterButtonContainer, FiltersContainer, ItemsLeft } from "./TodoFilters.components"
+import { FilterButton, FilterButtonContainer, FiltersContainer, ItemsLeft } from "./Filter.components"
 
 const TodoFilters = ({
     total,
