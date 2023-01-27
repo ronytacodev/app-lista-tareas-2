@@ -7,7 +7,7 @@ const Todo = ({ todo, handleSetComplete, handleDelete }) => {
                 {
                     completed ? (
                         <div onClick={() => handleSetComplete(id)} className="bg-green-700 p-1 rounded-full cursor-pointer">
-                            <img className="h-4 w-4" src='/check-icon.svg' alt='check icon' />
+                            <img className="h-4 w-4" src='/check_icon.svg' alt='check icon' />
                         </div>
                     ) : (
                         <span onClick={() => handleSetComplete(id)} className="border-solid border border-gray-500 rounded-full p-3 cursor-pointer"></span>
@@ -18,7 +18,7 @@ const Todo = ({ todo, handleSetComplete, handleDelete }) => {
                 </p>
             </div>
 
-            <img onClick={() => handleDelete(id)} className="h-5 w-5 cursor-pointer transition-all duration-300 ease-in" src="/close-icon.svg" alt="close icon" />
+            <img onClick={() => handleDelete(id)} className="h-5 w-5 cursor-pointer transition-all duration-300 ease-in" src="/close_icon.svg" alt="close icon" />
         </div >
 
 
